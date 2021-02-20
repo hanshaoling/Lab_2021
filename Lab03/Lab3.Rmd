@@ -183,6 +183,8 @@ associated with cancer status (0/1 in the variable `hasCancer`).
 - `edata`: Expression matrix.
 
 ```{r,eval= FALSE}
+library(stringr)
+library(pheatmap)
 counts <- readRDS("./part3_counts.rds")
 
 # Perform a log TPM normalization
@@ -271,6 +273,7 @@ abline(h=c(-1,1), col="dodgerblue", lwd=2)
 ```
 ![MA Plot](MAPlot.png)
 ```{r Volcano Plot,eval =FALSE}
+library(EnhancedVolcano)
 EnhancedVolcano(rdf,
     lab = rownames(rdf),
     x = 'log2FoldChange',
